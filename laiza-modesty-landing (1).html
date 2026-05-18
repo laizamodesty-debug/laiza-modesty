@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laiza Modesty – Muslimah Syar'i Kekinian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --sand: #E8DFD0;
+    --warm-brown: #A0835A;
+    --deep-brown: #6B5540;
+    --dark: #3A2E24;
+    --muted: #8A7B6A;
+    --accent: #C4A882;
+    --white: #FDFAF5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(253, 250, 245, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(160,131,90,0.12);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--deep-brown);
+  }
+  .nav-logo span { font-style: italic; font-weight: 300; color: var(--warm-brown); }
+  nav a {
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--deep-brown); }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-cta {
+    background: var(--deep-brown); color: var(--cream) !important;
+    padding: 0.55rem 1.4rem; border-radius: 2px;
+    font-size: 0.78rem !important; letter-spacing: 0.14em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--dark) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    background: var(--cream);
+    position: relative; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 3rem 5rem 5rem;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-tag {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--warm-brown); font-weight: 500;
+    margin-bottom: 1.6rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-tag::before {
+    content: ''; display: inline-block;
+    width: 32px; height: 1px; background: var(--warm-brown);
+  }
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 300; line-height: 1.12;
+    color: var(--dark);
+    margin-bottom: 1.8rem;
+  }
+  .hero-headline em {
+    font-style: italic; color: var(--warm-brown);
+  }
+  .hero-sub {
+    font-size: 1rem; line-height: 1.75;
+    color: var(--muted); max-width: 420px;
+    margin-bottom: 3rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; align-items: center; }
+  .btn-primary {
+    background: var(--deep-brown); color: var(--cream);
+    padding: 0.85rem 2.2rem;
+    font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--dark); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--deep-brown); font-size: 0.82rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; font-weight: 500;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--warm-brown); }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--sand);
+    animation: fadeIn 1.2s ease 0.2s both;
+  }
+  .hero-image-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #E8DFD0 0%, #D4C4AE 50%, #C4AE94 100%);
+    position: relative; overflow: hidden;
+  }
+  .fabric-pattern {
+    position: absolute; inset: 0;
+    opacity: 0.06;
+    background-image: repeating-linear-gradient(
+      45deg, var(--deep-brown) 0, var(--deep-brown) 1px,
+      transparent 0, transparent 50%
+    );
+    background-size: 20px 20px;
+  }
+  .hero-figure {
+    width: 260px; height: 420px;
+    background: linear-gradient(180deg, #BEA98A 0%, #A8916E 50%, #8B7355 100%);
+    border-radius: 130px 130px 20px 20px;
+    position: relative; z-index: 2;
+    box-shadow: 0 40px 80px rgba(58,46,36,0.25);
+  }
+  .hero-figure::before {
+    content: '';
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 70px; height: 70px; border-radius: 50%;
+    background: linear-gradient(135deg, #D4BC9C, #C4A882);
+  }
+  .hero-figure::after {
+    content: '';
+    position: absolute; top: 55px; left: -30px; right: -30px; bottom: 0;
+    background: linear-gradient(180deg, #C8B090 0%, #A08060 100%);
+    border-radius: 80px 80px 20px 20px;
+  }
+  .hero-badge {
+    position: absolute; bottom: 3rem; left: -1.5rem; z-index: 10;
+    background: var(--white); border: 1px solid var(--sand);
+    padding: 1rem 1.4rem; border-radius: 4px;
+    box-shadow: 0 16px 40px rgba(58,46,36,0.12);
+    min-width: 180px;
+  }
+  .hero-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600; color: var(--deep-brown);
+    line-height: 1;
+  }
+  .hero-badge-label {
+    font-size: 0.72rem; color: var(--muted);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px; height: 48px;
+    background: linear-gradient(var(--accent), transparent);
+  }
+
+  /* ── WHY / KEUNGGULAN ── */
+  #keunggulan {
+    padding: 7rem 5rem;
+    background: var(--white);
+  }
+  .section-tag {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--warm-brown); font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-tag::before {
+    content: ''; display: inline-block;
+    width: 28px; height: 1px; background: var(--warm-brown);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 4rem;
+    max-width: 560px;
+  }
+  .section-title em { font-style: italic; color: var(--warm-brown); }
+
+  .features-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border: 1px solid var(--sand);
+  }
+  .feature-card {
+    padding: 2.8rem 2.5rem;
+    border-right: 1px solid var(--sand);
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+  }
+  .feature-card:last-child { border-right: none; }
+  .feature-card:hover { background: var(--cream); }
+  .feature-icon {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.8rem;
+    font-size: 1.4rem;
+  }
+  .feature-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400;
+    color: var(--dark); margin-bottom: 0.8rem;
+  }
+  .feature-desc {
+    font-size: 0.88rem; line-height: 1.75;
+    color: var(--muted);
+  }
+  .feature-num {
+    position: absolute; top: 1.5rem; right: 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; font-weight: 300;
+    color: var(--sand); line-height: 1;
+    pointer-events: none;
+  }
+
+  /* ── PRODUK ── */
+  #produk {
+    padding: 7rem 5rem;
+    background: var(--cream);
+  }
+  .produk-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+  .produk-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .produk-card {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    overflow: hidden; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .produk-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(58,46,36,0.12);
+  }
+  .produk-img {
+    height: 300px; position: relative; overflow: hidden;
+  }
+  .produk-color-swatch {
+    position: absolute; bottom: 1rem; left: 1rem;
+    display: flex; gap: 5px;
+  }
+  .swatch {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.8);
+  }
+  .produk-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--deep-brown); color: var(--cream);
+    font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+  }
+  .produk-info { padding: 1.5rem; }
+  .produk-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--dark); margin-bottom: 0.4rem;
+  }
+  .produk-type {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 1rem;
+  }
+  .produk-price {
+    font-size: 1rem; font-weight: 500;
+    color: var(--deep-brown);
+  }
+  .produk-price span {
+    font-size: 0.78rem; color: var(--muted);
+    text-decoration: line-through; margin-left: 0.5rem; font-weight: 400;
+  }
+
+  /* Warna kolom produk */
+  .p1 { background: linear-gradient(160deg, #D4C4AE, #BDA98A); }
+  .p2 { background: linear-gradient(160deg, #C8C4B8, #B0AA98); }
+  .p3 { background: linear-gradient(160deg, #C4B8A8, #A8937C); }
+
+  /* Swatch colors */
+  .sw-sage { background: #B8C4AC; }
+  .sw-sand { background: #D4C4AE; }
+  .sw-clay { background: #C49474; }
+  .sw-moss { background: #8A9878; }
+  .sw-stone { background: #B0A898; }
+  .sw-ivory { background: #EAE4D8; }
+  .sw-camel { background: #C4A46C; }
+  .sw-taupe { background: #A89880; }
+  .sw-olive { background: #9CA07C; }
+
+  /* ── EARTH TONE BANNER ── */
+  #palette {
+    padding: 5rem;
+    background: var(--dark);
+    display: flex; gap: 0; overflow: hidden;
+  }
+  .palette-left {
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-right: 5rem;
+  }
+  .palette-tag {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .palette-tag::before {
+    content: ''; display: inline-block;
+    width: 28px; height: 1px; background: var(--accent);
+  }
+  .palette-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; line-height: 1.25;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  .palette-title em { font-style: italic; color: var(--accent); }
+  .palette-desc {
+    font-size: 0.9rem; line-height: 1.75;
+    color: rgba(245,240,232,0.6);
+    max-width: 380px;
+  }
+  .palette-right {
+    flex: 1;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .color-block {
+    height: 280px; position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 1rem 0.8rem;
+    cursor: pointer; transition: transform 0.3s;
+  }
+  .color-block:hover { transform: scaleY(1.04); }
+  .color-name {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; opacity: 0.8;
+  }
+  .cb1 { background: #C4B89A; color: var(--dark); }
+  .cb2 { background: #A89268; color: var(--dark); }
+  .cb3 { background: #8A7A5C; color: var(--cream); }
+  .cb4 { background: #B0A888; color: var(--dark); }
+  .cb5 { background: #9AA484; color: var(--dark); }
+  .cb6 { background: #7C8C68; color: var(--cream); }
+  .cb7 { background: #C8BCB0; color: var(--dark); }
+  .cb8 { background: #A0907C; color: var(--cream); }
+
+  /* ── SOCIAL PROOF ── */
+  #testimoni {
+    padding: 7rem 5rem;
+    background: var(--white);
+  }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .testi-card {
+    padding: 2rem 2rem 1.8rem;
+    border: 1px solid var(--sand);
+    position: relative;
+  }
+  .testi-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; line-height: 1;
+    color: var(--accent); position: absolute;
+    top: 1rem; left: 1.5rem;
+  }
+  .testi-text {
+    font-size: 0.92rem; line-height: 1.8;
+    color: var(--muted); margin-top: 1.5rem;
+    font-style: italic;
+  }
+  .testi-author {
+    margin-top: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+    border-top: 1px solid var(--sand); padding-top: 1.2rem;
+  }
+  .testi-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--sand); display: flex; align-items: center;
+    justify-content: center;
+    font-size: 0.72rem; font-weight: 500; color: var(--deep-brown);
+  }
+  .testi-name { font-size: 0.82rem; font-weight: 500; color: var(--dark); }
+  .testi-loc { font-size: 0.72rem; color: var(--muted); }
+  .testi-stars { color: var(--warm-brown); font-size: 0.8rem; letter-spacing: 2px; }
+
+  /* ── STATS ── */
+  #stats {
+    padding: 5rem;
+    background: var(--sand);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border-top: 1px solid rgba(160,131,90,0.2);
+  }
+  .stat-item {
+    text-align: center; padding: 2.5rem 2rem;
+    border-right: 1px solid rgba(160,131,90,0.2);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem; font-weight: 300;
+    color: var(--deep-brown); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label {
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500;
+  }
+
+  /* ── CTA ── */
+  #cta {
+    padding: 9rem 5rem;
+    background: var(--cream);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-bg-text {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18vw; font-weight: 300;
+    color: rgba(160,131,90,0.06);
+    white-space: nowrap; pointer-events: none;
+    letter-spacing: -0.02em;
+  }
+  .cta-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+  .cta-tag {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--warm-brown); font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+  }
+  .cta-tag::before, .cta-tag::after {
+    content: ''; display: inline-block;
+    width: 28px; height: 1px; background: var(--warm-brown);
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--dark); margin-bottom: 1.5rem;
+  }
+  .cta-title em { font-style: italic; color: var(--warm-brown); }
+  .cta-sub {
+    font-size: 1rem; line-height: 1.75; color: var(--muted);
+    margin-bottom: 3rem; max-width: 480px; margin-left: auto; margin-right: auto;
+  }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn-primary-lg {
+    background: var(--deep-brown); color: var(--cream);
+    padding: 1rem 2.8rem;
+    font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary-lg:hover { background: var(--dark); transform: translateY(-2px); }
+  .btn-outline-lg {
+    background: transparent; color: var(--deep-brown);
+    border: 1px solid var(--deep-brown);
+    padding: 1rem 2.8rem;
+    font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline-lg:hover { background: var(--deep-brown); color: var(--cream); }
+  .cta-wa {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.82rem; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .cta-wa:hover { color: var(--deep-brown); }
+  .wa-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #25D366; display: inline-flex; align-items: center;
+    justify-content: center;
+  }
+  .wa-icon svg { width: 14px; height: 14px; fill: white; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 5rem;
+    background: var(--dark);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--cream); letter-spacing: 0.08em;
+  }
+  .footer-logo span { font-style: italic; font-weight: 300; color: var(--accent); }
+  .footer-copy {
+    font-size: 0.75rem; color: rgba(245,240,232,0.4);
+    letter-spacing: 0.08em;
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a {
+    font-size: 0.75rem; color: rgba(245,240,232,0.5);
+    text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { height: 380px; }
+    .hero-left { padding: 3rem 2rem; }
+    #keunggulan, #produk, #testimoni, #cta, footer { padding: 4rem 2rem; }
+    .features-grid, .produk-grid, .testi-grid { grid-template-columns: 1fr; }
+    .feature-card { border-right: none; border-bottom: 1px solid var(--sand); }
+    #stats { grid-template-columns: repeat(2,1fr); padding: 3rem 2rem; }
+    .stat-item:nth-child(2) { border-right: none; }
+    #palette { flex-direction: column; padding: 3rem 2rem; }
+    .palette-left { padding-right: 0; margin-bottom: 3rem; }
+    .palette-right { grid-template-columns: repeat(4,1fr); }
+    .produk-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Laiza <span>Modesty</span></div>
+  <div class="nav-links">
+    <a href="#keunggulan">Keunggulan</a>
+    <a href="#produk">Koleksi</a>
+    <a href="#testimoni">Ulasan</a>
+    <a href="https://msha.ke/laizamodesty#links" class="nav-cta">Shop Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Muslimah Syar'i Kekinian</div>
+    <h1 class="hero-headline">
+      Tampil <em>Anggun</em><br>
+      Tanpa Kompromikan<br>
+      Nilai Syar'i
+    </h1>
+    <p class="hero-sub">
+      Pakaian muslimah modern dengan bahan berkualitas premium, warna earth tone yang elegan, dan pilihan set lengkap — dirancang untuk perempuan muda yang ingin tampil memukau setiap hari.
+    </p>
+    <div class="hero-btns">
+      <a href="#produk" class="btn-primary">Lihat Koleksi</a>
+      <a href="https://wa.me/6285945226732" class="btn-ghost">Order Sekarang →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-placeholder">
+      <div class="fabric-pattern"></div>
+      <div class="hero-figure"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-num">50+</div>
+        <div class="hero-badge-label">Pilihan Warna Tersedia</div>
+      </div>
+    </div>
+    <a href="#keunggulan" class="hero-scroll">Scroll</a>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan">
+  <div class="section-tag">Mengapa Laiza Modesty</div>
+  <h2 class="section-title">Tiga Alasan <em>Ribuan</em> Muslimah Memilih Kami</h2>
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <div class="feature-icon">🧵</div>
+      <h3 class="feature-title">Bahan Premium, Harga Ramah</h3>
+      <p class="feature-desc">Kami percaya muslimah berhak mendapatkan yang terbaik. Bahan pilihan — lembut, adem, dan tahan lama — dengan harga yang bisa dijangkau semua kalangan.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <div class="feature-icon">👗</div>
+      <h3 class="feature-title">One Set, Siap Pakai</h3>
+      <p class="feature-desc">Koleksi set lengkap kami memudahkan padu-padan harianmu. Gamis + khimar, set kaftan, dan berbagai pilihan yang tinggal pakai — praktis dan tetap stylish.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <div class="feature-icon">🎨</div>
+      <h3 class="feature-title">Earth Tone yang Disukai Gen Z</h3>
+      <p class="feature-desc">Warna-warna hangat yang sedang tren — sage, camel, clay, moss, dan ivory. Cocok dipadukan satu sama lain, sempurna untuk konten dan keseharian.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK -->
+<section id="produk">
+  <div class="produk-header reveal">
+    <div>
+      <div class="section-tag">Koleksi Terbaru</div>
+      <h2 class="section-title" style="margin-bottom:0">Pilihan <em>Favorit</em></h2>
+    </div>
+    <a href="https://msha.ke/laizamodesty#links" class="btn-ghost">Lihat Semua →</a>
+  </div>
+  <div class="produk-grid">
+    <div class="produk-card reveal">
+      <div class="produk-img p1">
+        <div class="produk-badge">Best Seller</div>
+        <div class="produk-color-swatch">
+          <div class="swatch sw-sand"></div>
+          <div class="swatch sw-clay"></div>
+          <div class="swatch sw-moss"></div>
+          <div class="swatch sw-ivory"></div>
+        </div>
+      </div>
+      <div class="produk-info">
+        <div class="produk-type">One Set Syar'i</div>
+        <div class="produk-name">Gamis Seruni Set</div>
+        <div class="produk-price">Rp 189.000 <span>Rp 249.000</span></div>
+      </div>
+    </div>
+    <div class="produk-card reveal">
+      <div class="produk-img p2">
+        <div class="produk-badge">New Arrival</div>
+        <div class="produk-color-swatch">
+          <div class="swatch sw-sage"></div>
+          <div class="swatch sw-stone"></div>
+          <div class="swatch sw-camel"></div>
+        </div>
+      </div>
+      <div class="produk-info">
+        <div class="produk-type">Set Kaftan</div>
+        <div class="produk-name">Kaftan Melati Set</div>
+        <div class="produk-price">Rp 215.000 <span>Rp 279.000</span></div>
+      </div>
+    </div>
+    <div class="produk-card reveal">
+      <div class="produk-img p3">
+        <div class="produk-color-swatch">
+          <div class="swatch sw-taupe"></div>
+          <div class="swatch sw-olive"></div>
+          <div class="swatch sw-sand"></div>
+        </div>
+      </div>
+      <div class="produk-info">
+        <div class="produk-type">Outer + Khimar</div>
+        <div class="produk-name">Outer Zahira Set</div>
+        <div class="produk-price">Rp 235.000 <span>Rp 295.000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE BANNER -->
+<section id="palette">
+  <div class="palette-left reveal">
+    <div class="palette-tag">Palet Warna</div>
+    <h2 class="palette-title">Jatuh Cinta pada <em>Earth Tone</em></h2>
+    <p class="palette-desc">
+      Setiap warna dipilih dengan cermat untuk memastikan harmoni visual yang sempurna. Cocok dipadukan satu sama lain, mudah difoto, dan membuat penampilanmu selalu elegan di mana pun.
+    </p>
+  </div>
+  <div class="palette-right reveal">
+    <div class="color-block cb1"><span class="color-name">Sand</span></div>
+    <div class="color-block cb2"><span class="color-name">Camel</span></div>
+    <div class="color-block cb3"><span class="color-name">Clay</span></div>
+    <div class="color-block cb4"><span class="color-name">Stone</span></div>
+    <div class="color-block cb5"><span class="color-name">Sage</span></div>
+    <div class="color-block cb6"><span class="color-name">Moss</span></div>
+    <div class="color-block cb7"><span class="color-name">Ivory</span></div>
+    <div class="color-block cb8"><span class="color-name">Taupe</span></div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni">
+  <div class="reveal">
+    <div class="section-tag">Apa Kata Mereka</div>
+    <h2 class="section-title">Dipercaya <em>Ribuan</em> Muslimah</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Bahannya enak banget dipakai seharian, ga gerah! Warnanya persis seperti di foto. Set-nya juga super praktis, tinggal pakai langsung jadi.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AR</div>
+        <div>
+          <div class="testi-name">Aulia Rahmawati</div>
+          <div class="testi-loc">Jakarta</div>
+        </div>
+        <div style="margin-left:auto">
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Akhirnya nemu gamis syar'i yang trendy! Warna earth tone-nya aesthetic banget buat konten. Udah repurchase 3x karena kualitasnya oke dan harga bersahabat.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">FN</div>
+        <div>
+          <div class="testi-name">Fatimah Nuraini</div>
+          <div class="testi-loc">Surabaya</div>
+        </div>
+        <div style="margin-left:auto">
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Suka banget sama koleksi one set-nya! Nggak perlu pusing mix and match. Packaging-nya juga rapi. Laiza Modesty recommended banget untuk hadiah wisuda!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SH</div>
+        <div>
+          <div class="testi-name">Siti Hanifah</div>
+          <div class="testi-loc">Yogyakarta</div>
+        </div>
+        <div style="margin-left:auto">
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stat-item reveal">
+    <div class="stat-num">5.000+</div>
+    <div class="stat-label">Pelanggan Setia</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Pilihan Warna</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">4.9★</div>
+    <div class="stat-label">Rating Rata-rata</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Syar'i Tersertifikasi</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg-text">Laiza</div>
+  <div class="cta-inner reveal">
+    <div class="cta-tag">Mulai Perjalananmu</div>
+    <h2 class="cta-title">Tampil <em>Syar'i</em>, Tetap Kekinian — Hari Ini</h2>
+    <p class="cta-sub">
+      Jangan biarkan fashion menghalangi keyakinanmu. Laiza Modesty hadir untuk muslimah yang ingin tampil percaya diri, cantik, dan sesuai syariat — setiap hari.
+    </p>
+    <div class="cta-btns">
+      <a href="https://msha.ke/laizamodesty#links" class="btn-primary-lg">Belanja Sekarang</a>
+      <a href="https://msha.ke/laizamodesty#links" class="btn-outline-lg">Lihat Katalog</a>
+    </div>
+    <a href="https://wa.me/6285945226732" class="cta-wa">
+      <span class="wa-icon">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.484 2 12.017c0 1.99.52 3.855 1.428 5.468L2 22l4.612-1.396A9.962 9.962 0 0 0 12 22c5.523 0 10-4.477 10-10S17.522 2 12 2z"/></svg>
+      </span>
+      Atau chat via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Laiza <span>Modesty</span></div>
+  <div class="footer-copy">© 2025 Laiza Modesty. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/laizamodesty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+    <a href="https://wa.me/6285945226732" target="_blank">WhatsApp</a>
+    <a href="https://msha.ke/laizamodesty#links" target="_blank">Shop Now</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, (entry.target.dataset.delay || 0));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach((el, i) => {
+    el.dataset.delay = (i % 3) * 120;
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
